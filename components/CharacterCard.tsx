@@ -2,8 +2,7 @@ import Link from "next/link";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import styles from './CharacterCard.module.css';
+import styles from '@/styles/CharacterCard.module.css';
 
 export interface CharacterCardProps {
   image: string;
@@ -23,9 +22,7 @@ function CharacterCard({ name, image, id }: CharacterCardProps) {
             alt={`${name}-image`}
           />
           <CardContent>
-            <Typography variant="body2" color="text.secondary">
-              {name}
-            </Typography>
+              {name} 
           </CardContent>
         </Card>
       </Link>

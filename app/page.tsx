@@ -3,9 +3,8 @@
 import CharacterCard from "@/components/CharacterCard";
 import Loading from "@/components/Loading";
 import { useFetch } from "@/utils/useFetch";
-import styles from './page.module.css';
 import { CharacterDetailType } from "./character/[id]/page";
-
+import styles from '@/styles/page.module.css';
 
 
 declare type CharactersType={

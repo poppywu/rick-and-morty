@@ -1,7 +1,8 @@
 "use client";
 
 import List from "@/components/List";
-import styles from './layout.module.css';
+import styles from "@/styles/layout.module.css";
+import "./global.css";
 
 export default function RootLayout({
   children,
@@ -11,10 +12,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={styles.main}>
-        <List/>
-        <div>
-        {children}
-        </div>
+        <List />
+        <div>{children}</div>
       </body>
     </html>
   );

@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Kode Mono';
+    src: url('/fonts/KodeMono.ttf'); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Micro 5';
+    src: url('/fonts/Micro5.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    font-family: 'Kode Mono', cursive, 'Arial', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Micro 5', 'Helvetica', sans-serif;
+    font-weight: 700;
+}

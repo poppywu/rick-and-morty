@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 import ListItem from "./ListItem";
 import { useRouter } from "next/navigation";
-import styles from './List.module.css';
 import { EpisodeType } from "@/app/episodes/[id]/page";
+import styles from '@/styles/List.module.css';
 
 export interface EpisodeObj {
   name: string;
@@ -45,6 +45,7 @@ function List() {
   },[page])
   return (
     <div className={styles.lists}>
+      <h1>EPISODES</h1>
       {episodes?.map((episodeObj) => (
         <ListItem
           title={episodeObj.name}

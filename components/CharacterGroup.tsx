@@ -2,8 +2,8 @@ import React from "react";
 import CharacterCard, { CharacterCardProps } from "./CharacterCard";
 import { useBatchFetch } from "@/utils/useBatchFetch";
 import Loading from "./Loading";
-import styles from './CharacterGroup.module.css';
 import { CharacterDetailType } from "@/app/character/[id]/page";
+import styles from '@/styles/CharacterGroup.module.css';
 
 interface CharacterMainPageProps {
   characters: string[];

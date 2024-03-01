@@ -1,4 +1,4 @@
-import styles from './ListItem.module.css';
+import styles from '@/styles/ListItem.module.css';
 import ListItemMUI from '@mui/material/ListItem';
 
 interface ListItemProps {
