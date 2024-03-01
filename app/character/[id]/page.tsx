@@ -2,16 +2,22 @@
 import React from "react";
 import { useFetch } from "@/utils/useFetch";
 import Loading from "@/components/Loading";
-import { Avatar, Card, CardContent } from "@mui/material";
+import CharacterDetail from "@/components/CharacterDetail";
+import styles from '@/styles/CharacterPage.module.css';
 
 interface CharacterDetailPageParamProps {
   params: { id: number };
 }
 
 export declare type CharacterDetailType = {
-  id: number;
-  name: string;
-  image: string;
+  id: number | undefined;
+  name: string | undefined;
+  image: string | undefined;
+  status: string | undefined;
+  species: string | undefined;
+  gender: string | undefined;
+  origin: { name: string } | { name: undefined };
+  location: { name: string } | { name: undefined };
 };
 
 function CharacterDetailPage({
@@ -28,23 +34,9 @@ function CharacterDetailPage({
     return <p>Sorry, something was wrong</p>;
   }
   return (
-    <>
-      <Card sx={{ minWidth: 680 }}>
-        <div>
-      <Avatar
-              alt="character-detail"
-              src={data?.image}
-              sx={{ height: 200, width: 200 }}
-            />
-          <h1>
-          {data?.name}
-          </h1>
-          </div>
-        <CardContent>
-
-        </CardContent>
-      </Card>
-    </>
+    <div className={styles.body}>
+      <CharacterDetail {...data}/>
+    </div>
   );
 }
 

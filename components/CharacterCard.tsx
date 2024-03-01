@@ -5,9 +5,9 @@ import CardMedia from "@mui/material/CardMedia";
 import styles from '@/styles/CharacterCard.module.css';
 
 export interface CharacterCardProps {
-  image: string;
-  name: string;
-  id: number;
+  image?: string;
+  name?: string;
+  id?: number;
 }
 
 function CharacterCard({ name, image, id }: CharacterCardProps) {
