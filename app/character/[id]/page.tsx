@@ -8,8 +8,14 @@ interface CharacterDetailPageParamProps {
   params: { id: number };
 }
 
+export declare type CharacterDetailType={
+  id:number;
+  name:string;
+  image:string;
+}
+
 function CharacterDetailPage({params:{id}}:CharacterDetailPageParamProps) {
-  const [data,loading,error]=useFetch(`https://rickandmortyapi.com/api/character/${id}`,[id]);
+  const [data,loading,error]=useFetch<CharacterDetailType>(`https://rickandmortyapi.com/api/character/${id}`,[id]);
   if(loading){
     return <Loading/>
   }

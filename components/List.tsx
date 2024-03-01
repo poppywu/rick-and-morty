@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import ListItem from "./ListItem";
 import { useRouter } from "next/navigation";
 import styles from './List.module.css';
+import { EpisodeType } from "@/app/episodes/[id]/page";
 
 export interface EpisodeObj {
   name: string;
@@ -12,7 +13,7 @@ export interface EpisodeObj {
 function List() {
   const router = useRouter();
   const [focus, setFocus] = useState(-1);
-  const [episodes, setEpisodes] = useState([]);
+  const [episodes, setEpisodes] = useState<EpisodeType[]>([]);
   const [page,setPage]=useState(1);
   const handleClick = (id: number) => {
     return () => {
@@ -25,7 +26,7 @@ function List() {
       }
     };
   };
-  const fetchMoreEpisodes = async (page) => {
+  const fetchMoreEpisodes = async (page:number) => {
     try {
       let response = await fetch(
         `https://rickandmortyapi.com/api/episode?page=${page}`

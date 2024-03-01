@@ -3,13 +3,14 @@ import CharacterCard, { CharacterCardProps } from "./CharacterCard";
 import { useBatchFetch } from "@/utils/useBatchFetch";
 import Loading from "./Loading";
 import styles from './CharacterGroup.module.css';
+import { CharacterDetailType } from "@/app/character/[id]/page";
 
 interface CharacterMainPageProps {
   characters: string[];
 }
 
 function CharacterMainPage({ characters }: CharacterMainPageProps) {
-  const [charactersData, loading, error] = useBatchFetch(characters, []);
+  const [charactersData, loading, error] = useBatchFetch<CharacterDetailType>(characters, []);
   if (loading) {
     return <Loading/>;
   }

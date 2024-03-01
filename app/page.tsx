@@ -4,10 +4,18 @@ import CharacterCard from "@/components/CharacterCard";
 import Loading from "@/components/Loading";
 import { useFetch } from "@/utils/useFetch";
 import styles from './page.module.css';
+import { CharacterDetailType } from "./character/[id]/page";
+
+
+
+declare type CharactersType={
+  info:{next:string};
+  results:CharacterDetailType[];
+}
 
 export default function Home() {
   // define the initial load
-  const [data, loading, error] = useFetch(
+  const [data, loading, error] = useFetch<CharactersType>(
     "https://rickandmortyapi.com/api/character",
     []
   );
