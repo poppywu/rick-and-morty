@@ -4,8 +4,11 @@ import { useFetch } from '@/utils/useFetch';
 import Loading from '@/components/Loading';
 import { Avatar } from '@mui/material';
 
+interface CharacterDetailPageParamProps {
+  params: { id: number };
+}
 
-function CharacterDetailPage({params:{id}}) {
+function CharacterDetailPage({params:{id}}:CharacterDetailPageParamProps) {
   const [data,loading,error]=useFetch(`https://rickandmortyapi.com/api/character/${id}`,[id]);
   if(loading){
     return <Loading/>
