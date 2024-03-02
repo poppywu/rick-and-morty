@@ -6,7 +6,6 @@ import { useFetch } from "@/utils/useFetch";
 import { CharacterDetailType } from "./character/[id]/page";
 import styles from '@/styles/page.module.css';
 
-
 declare type CharactersType={
   info:{next:string};
   results:CharacterDetailType[];

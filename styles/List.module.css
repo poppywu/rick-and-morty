@@ -5,3 +5,17 @@
     max-height: 100vh;
     overflow-y: auto;
 }
+
+.listHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.search{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}

@@ -4,6 +4,8 @@ import ListItem from "./ListItem";
 import { useRouter } from "next/navigation";
 import { EpisodeType } from "@/app/episodes/[id]/page";
 import styles from "@/styles/List.module.css";
+import ThemeToggleButton from "./ThemeToggleButton";
+import { Button } from "@mui/material";
 
 export interface EpisodeObj {
   name: string;
@@ -64,10 +66,15 @@ function List() {
   };
   return (
     <div className={styles.lists}>
+      <div className={styles.listHeader}>
       <h1>EPISODES</h1>
+      <ThemeToggleButton/>
+      </div>
+      <div className={styles.search}>
       <input type="text" value={input} onChange={handleChange} placeholder="Search episodes..."/>
-      <button onClick={handleSearch}>Search</button>
-      <button onClick={handleReset}>Reset</button>
+      <Button variant="contained" onClick={handleSearch}>Search</Button>
+      <Button variant="contained" onClick={handleReset}>Reset</Button>
+      </div>
       {term.length
         ? filterEpisode?.map((episodeObj) => (
             <ListItem
